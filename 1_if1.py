@@ -44,16 +44,19 @@ def main():
     print(prediction)
 
 
-def predict_life_stage(age: int):
-    if age >= 0 and age < 7:
+def predict_life_stage(age: int) -> str:
+    if 0 <= age < 7:
         return "Скорее всего, вы в детском саду."
-    elif age >= 7 and age < 18:
+    if 7 <= age < 18:
         return "Скорее всего, вы учитесь в школе."
-    elif age >= 18 and age < 23:
+    if 18 <= age < 23:
         return "Скорее всего, вы учитесь в ВУЗе."
-    elif age >= 23 and age <= 150:
+    if 23 <= age < 150:
         return "Скорее всего, вы работаете."
+    return "something went wrong"
 
+
+# Unnecessary "elif" after "return"
 
 if __name__ == "__main__":
     main()
