@@ -56,7 +56,5 @@ def predict_life_stage(age: int) -> str:
     return "something went wrong"
 
 
-# Unnecessary "elif" after "return"
-
 if __name__ == "__main__":
     main()
