@@ -37,8 +37,8 @@ def main():
         if age > 150:
             print(info)
             print("Попробуйте ещё раз.")
-        else:
-            break
+            continue
+        break
 
     prediction = predict_life_stage(age)
     print(prediction)
