@@ -15,13 +15,26 @@
     
 """
 
-questions_and_answers = {}
+questions_and_answers = {
+    "what's the weather today?": "sunny",
+    "got milk?": "no",
+    "request": "response",
+    "one": "two",
+}
 
-def ask_user(answers_dict):
-    """
-    Замените pass на ваш код
-    """
-    pass
-    
+
+def ask_user(answers_dict: dict):
+    while True:
+        try:
+            question = input("your question: ")
+            try:
+                print(answers_dict[question])
+            except KeyError:
+                print("sorry, try again")
+        except EOFError:
+            print("\n\ngood bye")
+            break
+
+
 if __name__ == "__main__":
     ask_user(questions_and_answers)
