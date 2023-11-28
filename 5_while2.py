@@ -31,7 +31,7 @@ def ask_user(answers_dict: dict):
                 print(answers_dict[question])
             except KeyError:
                 print("sorry, try again")
-        except EOFError:
+        except (EOFError, KeyboardInterrupt):
             print("\n\ngood bye")
             break
 
