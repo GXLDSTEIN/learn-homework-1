@@ -5,14 +5,13 @@
 Цикл while: ask_user со словарём
 
 * Создайте словарь типа "вопрос": "ответ", например:
-  {"Как дела": "Хорошо!", "Что делаешь?": "Программирую"} и так далее
+  {"Как дела": "Хорошо!", "Что делаешь?": "Программирую"} и так далее.
 * Напишите функцию ask_user() которая с помощью функции input()
   просит пользователя ввести вопрос, а затем, если вопрос есть
-  в словаре, программа давала ему соотвествующий ответ. Например:
+  в словаре, программа давала ему соответствующий ответ. Например:
 
     Пользователь: Что делаешь?
     Программа: Программирую
-    
 """
 
 questions_and_answers = {
@@ -27,10 +26,9 @@ def ask_user(answers_dict: dict):
     while True:
         try:
             question = input("your question: ")
-            try:
-                print(answers_dict[question])
-            except KeyError:
-                print("sorry, try again")
+            print(answers_dict[question])
+        except KeyError:
+            print("sorry, try again")
         except (EOFError, KeyboardInterrupt):
             print("\n\ngood bye")
             break
